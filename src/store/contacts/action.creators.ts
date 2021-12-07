@@ -17,7 +17,7 @@ export const fetchContacts =
       .catch((error: AxiosError) => {
         dispatch({
           type: ActionTypes.FETCH_CONTACTS_FAILURE,
-          error: error?.response?.data?.message,
+          payload: error?.response?.data?.message,
         });
       });
   };

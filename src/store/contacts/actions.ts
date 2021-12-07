@@ -3,6 +3,7 @@ import ActionTypes from "./types";
 
 export interface IFetchContactsRequest {
   type: ActionTypes.FETCH_CONTACTS_REQUEST;
+  payload?: any;
 }
 
 export interface IFetchContactsSuccess {
@@ -12,11 +13,8 @@ export interface IFetchContactsSuccess {
 
 export interface IFetchContactsFailure {
   type: ActionTypes.FETCH_CONTACTS_FAILURE;
-  error: string;
+  payload: string;
 }
-
-
-
 
 export type ContactsAction =
   | IFetchContactsRequest

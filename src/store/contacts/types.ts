@@ -1,4 +1,7 @@
 enum ActionTypes {
+  FETCH_CONTACTS = "fetch_contacts",
+  FETCH_CONTACT_BY_ID = "fetch_contact_by_id",
+
   FETCH_CONTACTS_REQUEST = "fetched_contacts_request",
   FETCH_CONTACTS_SUCCESS = "fetched_contacts_success",
   FETCH_CONTACTS_FAILURE = "fetched_contacts_failure",
