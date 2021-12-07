@@ -2,13 +2,13 @@ enum ActionTypes {
   FETCH_CONTACTS = "fetch_contacts",
   FETCH_CONTACT_BY_ID = "fetch_contact_by_id",
 
-  FETCH_CONTACTS_REQUEST = "fetched_contacts_request",
-  FETCH_CONTACTS_SUCCESS = "fetched_contacts_success",
-  FETCH_CONTACTS_FAILURE = "fetched_contacts_failure",
+  FETCH_CONTACTS_REQUEST = "fetch_contacts_request",
+  FETCH_CONTACTS_SUCCESS = "fetch_contacts_success",
+  FETCH_CONTACTS_FAILURE = "fetch_contacts_failure",
 
-  FETCH_CONTACT_BY_ID_REQUEST = "fetched_contact_by_id_request",
-  FETCH_CONTACT_BY_ID_SUCCESS = "fetched_contact_by_id_success",
-  FETCH_CONTACT_BY_ID_FAILURE = "fetched_contact_by_id_failure",
+  FETCH_CONTACT_BY_ID_REQUEST = "fetch_contact_by_id_request",
+  FETCH_CONTACT_BY_ID_SUCCESS = "fetch_contact_by_id_success",
+  FETCH_CONTACT_BY_ID_FAILURE = "fetch_contact_by_id_failure",
 
   ADD_CONTACT_REQUEST = "add_contact_request",
   ADD_CONTACT_SUCCESS = "add_contact_success",

@@ -16,7 +16,25 @@ export interface IFetchContactsFailure {
   payload: string;
 }
 
+export interface IFetchContactByIdRequest {
+  type: ActionTypes.FETCH_CONTACT_BY_ID_REQUEST;
+  payload?: any;
+}
+
+export interface IFetchContactByIdSuccess {
+  type: ActionTypes.FETCH_CONTACT_BY_ID_SUCCESS;
+  payload: IContact;
+}
+
+export interface IFetchContactByIdFailure {
+  type: ActionTypes.FETCH_CONTACT_BY_ID_FAILURE;
+  payload: string;
+}
+
 export type ContactsAction =
   | IFetchContactsRequest
   | IFetchContactsSuccess
-  | IFetchContactsFailure;
+  | IFetchContactsFailure
+  | IFetchContactByIdRequest
+  | IFetchContactByIdSuccess
+  | IFetchContactByIdFailure;
