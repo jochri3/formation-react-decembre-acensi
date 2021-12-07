@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { lazy, Suspense } from "react";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import Layout from "./components/layout";
+import Loader from "./components/shared/loader";
 
-function App() {
+const Home = lazy(() => import(/* webpackChunkName:"home" */ "./pages/home/"));
+const ContactsIndex = lazy(
+  () => import(/* webpackChunkName:"contacts-index" */ "./pages/contacts")
+);
+
+const ShowContact = lazy(
+  () => import(/* webpackChunkName:"show-contact" */ "./pages/contacts/show")
+);
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Layout>
+        <Suspense fallback={<Loader />}>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/home">
+              <Redirect to="/" />
+            </Route>
+            <Route exact path="/contacts" component={ContactsIndex} />
+            <Route exact path="/contacts/:id" component={ShowContact} />
+          </Switch>
+        </Suspense>
+      </Layout>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;

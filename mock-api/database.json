@@ -1,3 +1,20 @@
 {
-  "contacts": []
+  "contacts": [
+    {
+      "id": 1,
+      "fname": "Christian",
+      "lname": "Lisangola",
+      "email": "christian@zabibu.co",
+      "phoneNumber": "+254792669410",
+      "address": "West suites Cherry Homes"
+    },
+    {
+      "id": 2,
+      "fname": "Sarah",
+      "lname": "Luaba",
+      "email": "luabasarah@gmail.com",
+      "phoneNumber": "+1792669410",
+      "address": "North Carolina"
+    }
+  ]
 }

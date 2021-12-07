@@ -8,6 +8,7 @@ const Wrapper: React.FC = ({ children }) => {
           <th>Last name</th>
           <th>Email</th>
           <th>Telephone</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>{children}</tbody>
