@@ -1,8 +1,15 @@
 import { Dispatch } from "redux";
-import { fetchAll, fetchOne, deleteOne } from "../../services/contacts.api";
+import {
+  fetchAll,
+  fetchOne,
+  deleteOne,
+  createOne,
+  updateOne,
+} from "../../services/contacts.api";
 import { ContactsAction } from "./actions";
 import ActionTypes from "./types";
 import { AxiosError } from "axios";
+import { IContact } from "../../@types/i-contact";
 
 export const fetchContacts =
   () => async (dispatch: Dispatch<ContactsAction>) => {
@@ -50,6 +57,41 @@ export const deleteContact =
       .catch((error: AxiosError) => {
         dispatch({
           type: ActionTypes.DELETE_CONTACT_FAILURE,
+          payload: error?.response?.statusText as string,
+        });
+      });
+  };
+
+export const addContact =
+  (contact: IContact) => async (dispatch: Dispatch<ContactsAction>) => {
+    dispatch({ type: ActionTypes.ADD_CONTACT_REQUEST });
+    createOne(contact)
+      .then(() =>
+        dispatch({
+          type: ActionTypes.ADD_CONTACT_SUCCESS,
+          payload: contact,
+        })
+      )
+      .catch((error: AxiosError) => {
+        dispatch({
+          type: ActionTypes.ADD_CONTACT_FAILURE,
+          payload: error?.response?.statusText as string,
+        });
+      });
+  };
+
+export const updateContact =
+  (data: IContact) => async (dispatch: Dispatch<ContactsAction>) => {
+    dispatch({ type: ActionTypes.UPDATE_CONTACT_REQUEST });
+    updateOne(data)
+      .then(() =>
+        dispatch({
+          type: ActionTypes.UPDATE_CONTACT_SUCCESS,
+        })
+      )
+      .catch((error: AxiosError) => {
+        dispatch({
+          type: ActionTypes.UPDATE_CONTACT_FAILURE,
           payload: error?.response?.statusText as string,
         });
       });

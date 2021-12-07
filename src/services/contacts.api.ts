@@ -27,10 +27,11 @@ export const deleteOne = (id: string) => {
   });
 };
 
-export const updateOne = (id: string) => {
+export const updateOne = (data: IContact) => {
   return API({
-    url: urlBuilder(id),
+    url: urlBuilder(data.id),
     method: "PUT",
+    data,
   });
 };
 

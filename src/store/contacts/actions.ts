@@ -49,6 +49,38 @@ export interface IDeleteContactFailure {
   payload: string;
 }
 
+// POST /contacts
+export interface IAddContactRequest {
+  type: ActionTypes.ADD_CONTACT_REQUEST;
+  payload?: any;
+}
+
+export interface IAddContactSuccess {
+  type: ActionTypes.ADD_CONTACT_SUCCESS;
+  payload?: IContact; //Pour faire un push dans le store
+}
+
+export interface IAddContactFailure {
+  type: ActionTypes.ADD_CONTACT_FAILURE;
+  payload: string;
+}
+
+// PUT /contacts/:id
+export interface IUpdateContactRequest {
+  type: ActionTypes.UPDATE_CONTACT_REQUEST;
+  payload?: any;
+}
+
+export interface IUpdateContactSuccess {
+  type: ActionTypes.UPDATE_CONTACT_SUCCESS;
+  payload?: IContact;
+}
+
+export interface IUpdateContactFailure {
+  type: ActionTypes.UPDATE_CONTACT_FAILURE;
+  payload: string;
+}
+
 export type ContactsAction =
   | IFetchContactsRequest
   | IFetchContactsSuccess
@@ -58,4 +90,10 @@ export type ContactsAction =
   | IFetchContactByIdFailure
   | IDeleteContactRequest
   | IDeleteContactSuccess
-  | IDeleteContactFailure;
+  | IDeleteContactFailure
+  | IAddContactRequest
+  | IAddContactSuccess
+  | IAddContactFailure
+  | IUpdateContactRequest
+  | IUpdateContactSuccess
+  | IUpdateContactFailure;

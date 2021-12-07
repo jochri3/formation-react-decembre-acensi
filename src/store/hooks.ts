@@ -6,12 +6,20 @@ import {
   fetchContacts,
   fetchContactById,
   deleteContact,
+  addContact,
+  updateContact,
 } from "./contacts/action.creators";
 
 export const useActions = () => {
   const dispatch = useDispatch<AppDispatch>();
   return bindActionCreators(
-    { fetchContacts, fetchContactById, deleteContact },
+    {
+      fetchContacts,
+      fetchContactById,
+      deleteContact,
+      addContact,
+      updateContact,
+    },
     dispatch
   );
 };

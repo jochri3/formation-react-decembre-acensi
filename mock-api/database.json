@@ -23,6 +23,46 @@
       "email": "jackson.lisangola@gmail.com",
       "phoneNumber": "+2438938383838",
       "address": "Kinshasa"
+    },
+    {
+      "id": 4,
+      "fname": "Anika",
+      "lname": "Skinner",
+      "email": "qyrohig@training.com",
+      "phoneNumber": "+3379932856",
+      "address": "Sit in eos voluptat"
+    },
+    {
+      "id": 5,
+      "fname": "Charlotte",
+      "lname": "William",
+      "email": "xumu@training.com",
+      "phoneNumber": "+3378100895",
+      "address": "Qui libero sint mag"
+    },
+    {
+      "id": 6,
+      "fname": "Linus",
+      "lname": "Stafford",
+      "email": "kuwuqyhico@training.com",
+      "phoneNumber": "+3378141562",
+      "address": "Voluptatem Laborum"
+    },
+    {
+      "id": 7,
+      "fname": "Suki",
+      "lname": "Coffey",
+      "email": "wukodu@training.com",
+      "phoneNumber": "+3373620701",
+      "address": "Tempore hic soluta "
+    },
+    {
+      "id": 8,
+      "fname": "Kpm Groupe",
+      "lname": "lis",
+      "email": "jagger146@gmail.com",
+      "phoneNumber": "0813299771",
+      "address": "75 Rue du Poteau|Zoro"
     }
   ]
 }
