@@ -5,6 +5,6 @@ const rootReducer = combineReducers({
   contacts: contactReducer,
 });
 
-export type RootReducerType = ReturnType<typeof rootReducer>;
+export type RootState = ReturnType<typeof rootReducer>;
 
 export default rootReducer;
