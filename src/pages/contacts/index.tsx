@@ -14,7 +14,7 @@ const ContactIndex = () => {
   );
   const contacts = useTypedSelector((state) => state.contacts.list);
 
-  const { fetchContacts } = useActions();
+  const { fetchContacts, deleteContact } = useActions();
 
   useEffect(() => {
     fetchContacts();
@@ -24,7 +24,12 @@ const ContactIndex = () => {
     if (isLoading) {
       return <Loader />;
     } else if (error?.length) return <Error message={error} />;
-    return <ContactsList contacts={contacts} />;
+    return (
+      <ContactsList
+        contacts={contacts}
+        deleteContact={(id) => deleteContact(id)}
+      />
+    );
   };
 
   return render();
