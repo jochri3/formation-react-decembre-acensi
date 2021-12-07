@@ -15,6 +15,14 @@
       "email": "luabasarah@gmail.com",
       "phoneNumber": "+1792669410",
       "address": "North Carolina"
+    },
+    {
+      "id": 3,
+      "fname": "Jackson",
+      "lname": "Lisangola",
+      "email": "jackson.lisangola@gmail.com",
+      "phoneNumber": "+2438938383838",
+      "address": "Kinshasa"
     }
   ]
 }

@@ -1,6 +1,5 @@
 import React from "react";
 interface InputFieldProps {
-  id?: string;
   label: string;
   type: string;
   placeholder?: string;
@@ -16,19 +15,18 @@ const Input: React.FC<InputFieldProps> = ({
   name,
   value = "",
   onChange,
-  id,
   label,
 }) => {
   return (
     <div>
-      <label htmlFor={id}>{label}</label>
+      <label htmlFor={name}>{label}</label>
       <input
         type={type}
         placeholder={placeholder}
         name={name}
         value={value}
         onChange={onChange}
-        id={id}
+        id={name}
       />
     </div>
   );
