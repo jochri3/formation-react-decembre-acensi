@@ -1,33 +1,29 @@
-import { useState, useEffect } from "react";
-import { IContact } from "../../@types/i-contact";
-import { fetchAll } from "../../services/contacts.api";
+import { useEffect } from "react";
 import ContactsList from "../../components/contacts/list";
 import Loader from "../../components/shared/loader";
 import Error from "../../components/shared/error";
-import { AxiosError } from "axios";
+import { useActions, useTypedSelector } from "../../store/hooks";
+import ActionTypes from "../../store/contacts/types";
 
 const ContactIndex = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState("");
-  const [contacts, setContacts] = useState<IContact[]>([]);
+  const isLoading = useTypedSelector(
+    (state) => state.apiLoading[ActionTypes.FETCH_CONTACTS]
+  );
+  const error = useTypedSelector(
+    (state) => state.apiError[ActionTypes.FETCH_CONTACTS]
+  );
+  const contacts = useTypedSelector((state) => state.contacts.list);
+
+  const { fetchContacts } = useActions();
 
   useEffect(() => {
-    setIsLoading(true);
-    fetchAll()
-      .then((response) => {
-        setContacts(response.data);
-        setIsLoading(false);
-      })
-      .catch((err: AxiosError) => {
-        setError(err.response?.statusText as string);
-        setIsLoading(false);
-      });
+    fetchContacts();
   }, []);
 
   const render = () => {
     if (isLoading) {
       return <Loader />;
-    } else if (error.length) return <Error message={error} />;
+    } else if (error?.length) return <Error message={error} />;
     return <ContactsList contacts={contacts} />;
   };
 
