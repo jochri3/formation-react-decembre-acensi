@@ -1,11 +1,10 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { IContact } from "../../@types/i-contact";
-import { fetchOne } from "../../services/contacts.api";
-import { AxiosError } from "axios";
 import Loader from "../../components/shared/loader";
 import ContactItem from "../../components/contacts/item";
 import Error from "../../components/shared/error";
+import { useTypedSelector, useActions } from "../../store/hooks";
+import ActionTypes from "../../store/contacts/types";
 
 interface Params {
   id: string;
@@ -13,27 +12,22 @@ interface Params {
 
 const ShowContact = () => {
   const { id } = useParams<Params>();
-  const [contact, setContact] = useState<IContact>({} as IContact);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState("");
-
+  const contact = useTypedSelector((state) => state.contacts.item);
+  const isLoading = useTypedSelector(
+    (state) => state.apiLoading[ActionTypes.FETCH_CONTACT_BY_ID]
+  );
+  const error = useTypedSelector(
+    (state) => state.apiError[ActionTypes.FETCH_CONTACT_BY_ID]
+  );
+  const { fetchContactById } = useActions();
   useEffect(() => {
-    setIsLoading(true);
-    fetchOne(id)
-      .then((response) => {
-        setContact(response.data);
-        setIsLoading(false);
-      })
-      .catch((err: AxiosError) => {
-        setError(err.response?.statusText as string);
-        setIsLoading(false);
-      });
+    fetchContactById(id);
   }, []);
 
   const render = () => {
     if (isLoading) {
       return <Loader />;
-    } else if (error.length) return <Error message={error} />;
+    } else if (error?.length) return <Error message={error} />;
     return <ContactItem contact={contact} />;
   };
 
