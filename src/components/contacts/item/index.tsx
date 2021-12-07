@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { IContact } from "../../../@types/i-contact";
 
 export interface ContactItemProps {
@@ -19,6 +20,7 @@ const ContactItem: React.FC<ContactItemProps> = ({ contact }) => {
         <a href={`tel:${contact.phoneNumber}`}>{contact.phoneNumber}</a>
       </p>
       <p>{contact.address}</p>
+      <Link to="/contacts">&lt;-Back</Link>
     </>
   );
 };
