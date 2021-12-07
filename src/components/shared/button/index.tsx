@@ -1,15 +1,20 @@
 interface ButtonProps {
+  type?: "button" | "submit" | "reset" | undefined;
   label: string;
-  onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-const Button: React.FC<ButtonProps> = ({ label, children, onClick }) => {
+const Button: React.FC<ButtonProps> = ({
+  label,
+  children,
+  onClick,
+  type = "button",
+}) => {
   return (
-    // eslint-disable-next-line jsx-a11y/anchor-is-valid
-    <a onClick={onClick}>
+    <button type={type} onClick={onClick}>
       {children}&nbsp;
       {label}
-    </a>
+    </button>
   );
 };
 
