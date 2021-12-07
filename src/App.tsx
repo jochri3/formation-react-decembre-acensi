@@ -12,6 +12,10 @@ const ShowContact = lazy(
   () => import(/* webpackChunkName:"show-contact" */ "./pages/contacts/show")
 );
 
+const NotFound = lazy(
+  () => import(/* webpackChunkName:"not-found" */ "./pages/404")
+);
+
 const App = () => {
   return (
     <BrowserRouter>
@@ -24,6 +28,7 @@ const App = () => {
             </Route>
             <Route exact path="/contacts" component={ContactsIndex} />
             <Route exact path="/contacts/:id" component={ShowContact} />
+            <Route path="*" component={NotFound} />
           </Switch>
         </Suspense>
       </Layout>
