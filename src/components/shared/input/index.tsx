@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 interface InputFieldProps {
   label: string;
   type: string;
@@ -17,6 +17,7 @@ const Input: React.FC<InputFieldProps> = ({
   onChange,
   label,
 }) => {
+  console.log(name, " : ", value);
   return (
     <div>
       <label htmlFor={name}>{label}</label>
@@ -32,4 +33,4 @@ const Input: React.FC<InputFieldProps> = ({
   );
 };
 
-export default Input;
+export default memo(Input);

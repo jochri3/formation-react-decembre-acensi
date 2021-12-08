@@ -4,25 +4,25 @@
       "id": 1,
       "fname": "Christian",
       "lname": "Lisangola",
-      "email": "christian@zabibu.co",
-      "phoneNumber": "+254792669410",
-      "address": "West suites Cherry Homes"
+      "email": "christian.lisangola@gmail.com",
+      "phoneNumber": "+33792669410",
+      "address": "3 rue de la gare"
     },
     {
       "id": 2,
       "fname": "Sarah",
-      "lname": "Luaba",
-      "email": "luabasarah@gmail.com",
-      "phoneNumber": "+1792669410",
-      "address": "North Carolina"
+      "lname": "Blbabla",
+      "email": "blablasarah@gmail.com",
+      "phoneNumber": "+33792669410",
+      "address": "12 rue de la gare"
     },
     {
       "id": 3,
       "fname": "Jackson",
-      "lname": "Lisangola",
+      "lname": "Tototo",
       "email": "jackson.lisangola@gmail.com",
-      "phoneNumber": "+2438938383838",
-      "address": "Kinshasa"
+      "phoneNumber": "+33777777777",
+      "address": "Somewhere"
     },
     {
       "id": 4,
@@ -55,14 +55,6 @@
       "email": "wukodu@training.com",
       "phoneNumber": "+3373620701",
       "address": "Tempore hic soluta "
-    },
-    {
-      "id": 8,
-      "fname": "Kpm Groupe",
-      "lname": "lis",
-      "email": "jagger146@gmail.com",
-      "phoneNumber": "0813299771",
-      "address": "75 Rue du Poteau|Zoro"
     }
   ]
 }
